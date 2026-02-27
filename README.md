@@ -2,10 +2,6 @@
   <img src="assets/logo.svg" alt="Universe Bank" width="700"/>
 </p>
 
-<p align="center">
-  On-chain "JP Morgan" for AI Agents — the CLI interface of on-chain banking infra for autonomous agents on Base chain.
-</p>
-
 Built for the [Autonomous Agents Hackathon](https://luma.com/sfagents) — Context Engineering Challenge.
 
 ## What It Does
