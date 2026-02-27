@@ -4,7 +4,7 @@ import * as log from '../utils/logger.js';
 import { loadModel } from '../lib/credit-model.js';
 import { extractFeatures, calculateCreditScore } from '../lib/credit-engine.js';
 import { loadLoanStore } from '../lib/loan-store.js';
-import { loadWallet, getBalances } from '../lib/wallet-manager.js';
+import { loadWallet } from '../lib/wallet-manager.js';
 import { readConfig } from '../lib/config.js';
 
 export function registerCreditCommands(program: Command) {
@@ -15,14 +15,12 @@ export function registerCreditCommands(program: Command) {
   credit
     .command('score')
     .description('View your credit score')
-    .option('--network <network>', 'mainnet or testnet', 'testnet')
-    .action(async (opts) => {
+    .action(async () => {
       try {
-        const { privateKey } = await loadWallet();
+        await loadWallet();
         const s = log.spinner('Calculating credit score...');
 
         const config = readConfig();
-        const balances = await getBalances(privateKey, opts.network);
         const store = loadLoanStore();
 
         const myLoans = store.loans;
@@ -33,7 +31,7 @@ export function registerCreditCommands(program: Command) {
         const features = extractFeatures({
           transactionCount: myLoans.length * 2 + 5,
           repaymentHistory,
-          aaveDeposits: parseFloat(balances.usdc) * 0.5,
+          aaveDeposits: 0,
           identityRegistered: !!config.agentId,
           accountAge: 1,
           totalBorrowed: myLoans.reduce((s, l) => s + l.amount, 0),
