@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <defs>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD6EB"/>
+      <stop offset="15%" stop-color="#FFC2E0"/>
+      <stop offset="30%" stop-color="#FFADD6"/>
+      <stop offset="45%" stop-color="#FF99CC"/>
+      <stop offset="60%" stop-color="#FF85C2"/>
+      <stop offset="75%" stop-color="#FF70B8"/>
+      <stop offset="88%" stop-color="#FF5CAD"/>
+      <stop offset="100%" stop-color="#FF47A3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="200" rx="12" fill="#0d1117"/>
+  <text x="400" y="90" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="6" fill="url(#pinkGrad)">UNIVERSE BANK</text>
+  <text x="400" y="130" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#FF85C2">On-chain "JP Morgan" CLI interface for AI Agents</text>
+  <text x="400" y="160" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="13">
+    <tspan fill="#ffffff">Powered by </tspan>
+    <tspan fill="#0052FF">Base</tspan>
+    <tspan fill="#555"> | </tspan>
+    <tspan fill="#00d4ff">ERC-8004</tspan>
+    <tspan fill="#555"> | </tspan>
+    <tspan fill="#FFD700">x402</tspan>
+    <tspan fill="#555"> | </tspan>
+    <tspan fill="#B6509E">Aave V3</tspan>
+  </text>
+</svg>
