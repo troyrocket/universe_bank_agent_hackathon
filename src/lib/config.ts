@@ -38,3 +38,15 @@ export function writeConfig(config: AppConfig): void {
   const existing = readConfig();
   writeFileSync(getConfigPath(), JSON.stringify({ ...existing, ...config }, null, 2));
 }
+
+export function getCreditModelPath(): string {
+  return join(getConfigDir(), 'credit-model.json');
+}
+
+export function getLoansPath(): string {
+  return join(getConfigDir(), 'loans.json');
+}
+
+export function getSimulationReportPath(): string {
+  return join(getConfigDir(), 'simulation-report.json');
+}

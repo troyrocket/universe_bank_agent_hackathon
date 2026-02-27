@@ -24,3 +24,7 @@ export function spinner(text: string) {
 export function label(key: string, value: string) {
   console.log(`  ${chalk.gray(key + ':')} ${value}`);
 }
+
+export function divider(length = 50) {
+  console.log(chalk.gray('━'.repeat(length)));
+}

@@ -5,6 +5,9 @@ import { registerWalletCommands } from './commands/wallet.js';
 import { registerIdentityCommands } from './commands/identity.js';
 import { registerPayCommands } from './commands/pay.js';
 import { registerDepositCommands } from './commands/deposit.js';
+import { registerCreditCommands } from './commands/credit.js';
+import { registerLoanCommands } from './commands/loan.js';
+import { registerSimulateCommands } from './commands/simulate.js';
 
 // ANSI Shadow font - UNIVERSE BANK on one line
 const LINES = [
@@ -76,5 +79,8 @@ registerWalletCommands(program);
 registerIdentityCommands(program);
 registerPayCommands(program);
 registerDepositCommands(program);
+registerCreditCommands(program);
+registerLoanCommands(program);
+registerSimulateCommands(program);
 
 program.parse();

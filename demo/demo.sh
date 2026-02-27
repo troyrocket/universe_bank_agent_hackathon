@@ -1,6 +1,6 @@
 #!/bin/bash
-# Universe Bank - Live Demo Script
-# Run: bash demo.sh
+# Universe Bank - Full Live Demo Script
+# Run from project root: bash demo/demo.sh
 
 export UNIVERSE_BANK_PASSWORD=demo
 
@@ -75,14 +75,39 @@ type_cmd "ubank deposit balance --network mainnet"
 npx tsx src/index.ts deposit balance --network mainnet
 pause
 
+# Step 7: Credit Score
+echo -e "${YELLOW}  Step 7: Check AI Agent credit score${NC}"
+pause
+type_cmd "ubank credit score"
+npx tsx src/index.ts credit score --network testnet
+pause
+
+# Step 8: Apply for a loan
+echo -e "${YELLOW}  Step 8: Apply for a USDC loan${NC}"
+pause
+type_cmd "ubank loan apply 50"
+npx tsx src/index.ts loan apply 50
+pause
+
+# Step 9: Simulation (the star of the show)
+echo -e "${YELLOW}  Step 9: Run credit system simulation (100 agents, 24 epochs)${NC}"
+echo -e "${DIM}  Watch the self-improving credit model reduce default rates...${NC}"
+pause
+type_cmd "ubank simulate run --agents 100 --epochs 24 --seed 42"
+npx tsx src/index.ts simulate run --agents 100 --epochs 24 --seed 42
+pause
+
 # Summary
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${CYAN}  Demo Complete!${NC}"
 echo ""
-echo -e "  ${GREEN}Wallet${NC}     - AI Agent creates its own wallet"
-echo -e "  ${GREEN}Identity${NC}   - On-chain identity via ERC-8004 (NFT)"
-echo -e "  ${GREEN}Payment${NC}    - Autonomous payments via x402 protocol"
-echo -e "  ${GREEN}Yield${NC}      - Earn yield by depositing into Aave V3"
+echo -e "  ${GREEN}Wallet${NC}       - AI Agent creates its own wallet"
+echo -e "  ${GREEN}Identity${NC}     - On-chain identity via ERC-8004 (NFT)"
+echo -e "  ${GREEN}Payment${NC}      - Autonomous payments via x402 protocol"
+echo -e "  ${GREEN}Yield${NC}        - Earn yield by depositing into Aave V3"
+echo -e "  ${GREEN}Credit${NC}       - Self-improving credit scoring system"
+echo -e "  ${GREEN}Lending${NC}      - AI Agent loan application & repayment"
+echo -e "  ${GREEN}Simulation${NC}   - 100 agents, default rate 37% -> 15%"
 echo ""
 echo -e "  ${DIM}Universe Bank: The JP Morgan for AI Agents${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
