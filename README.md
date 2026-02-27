@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Universe Bank" width="700"/>
+  <img src="assets/logo.svg" alt="Universe Bank" width="800"/>
 </p>
 
 Built for the [Autonomous Agents Hackathon](https://luma.com/sfagents) — Context Engineering Challenge.
