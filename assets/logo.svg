@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 155">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 150">
   <defs>
     <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFD6EB"/>
@@ -11,16 +11,16 @@
       <stop offset="100%" stop-color="#FF47A3"/>
     </linearGradient>
   </defs>
-  <text xml:space="preserve" font-family="'SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','Courier New',monospace" font-size="10.5" font-weight="bold" fill="url(#pinkGrad)">
-    <tspan x="0" y="14">██╗   ██╗███╗   ██╗██╗██╗   ██╗███████╗██████╗ ███████╗███████╗  ██████╗  █████╗ ███╗   ██╗██╗  ██╗</tspan>
-    <tspan x="0" y="28">██║   ██║████╗  ██║██║██║   ██║██╔════╝██╔══██╗██╔════╝██╔════╝  ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝</tspan>
-    <tspan x="0" y="42">██║   ██║██╔██╗ ██║██║██║   ██║█████╗  ██████╔╝███████╗█████╗    ██████╔╝███████║██╔██╗ ██║█████╔╝ </tspan>
-    <tspan x="0" y="56">██║   ██║██║╚██╗██║██║╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║██╔══╝    ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ </tspan>
-    <tspan x="0" y="70">╚██████╔╝██║ ╚████║██║ ╚████╔╝ ███████╗██║  ██║███████║███████╗  ██████╔╝██║  ██║██║ ╚████║██║  ██╗</tspan>
-    <tspan x="0" y="84"> ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝</tspan>
+  <text xml:space="preserve" text-anchor="middle" font-family="'SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','Courier New',monospace" font-size="9.2" font-weight="bold" fill="url(#pinkGrad)">
+    <tspan x="340" y="16">██╗   ██╗███╗   ██╗██╗██╗   ██╗███████╗██████╗ ███████╗███████╗  ██████╗  █████╗ ███╗   ██╗██╗  ██╗</tspan>
+    <tspan x="340" y="28">██║   ██║████╗  ██║██║██║   ██║██╔════╝██╔══██╗██╔════╝██╔════╝  ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝</tspan>
+    <tspan x="340" y="40">██║   ██║██╔██╗ ██║██║██║   ██║█████╗  ██████╔╝███████╗█████╗    ██████╔╝███████║██╔██╗ ██║█████╔╝ </tspan>
+    <tspan x="340" y="52">██║   ██║██║╚██╗██║██║╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║██╔══╝    ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ </tspan>
+    <tspan x="340" y="64">╚██████╔╝██║ ╚████║██║ ╚████╔╝ ███████╗██║  ██║███████║███████╗  ██████╔╝██║  ██║██║ ╚████║██║  ██╗</tspan>
+    <tspan x="340" y="76"> ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝</tspan>
   </text>
-  <text x="375" y="115" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#FF85C2">On-chain "JP Morgan" CLI interface for AI Agents    <tspan fill="#888" font-size="11">v0.1.0</tspan></text>
-  <text x="375" y="140" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="12">
+  <text text-anchor="middle" x="340" y="108" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="500" fill="#FF85C2">On-chain "JP Morgan" CLI Interface for AI Agents  <tspan fill="#888" font-size="13">v0.1.0</tspan></text>
+  <text text-anchor="middle" x="340" y="135" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14">
     <tspan fill="#ccc">Powered by </tspan>
     <tspan fill="#0052FF">Base</tspan>
     <tspan fill="#888"> | </tspan>
