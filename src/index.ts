@@ -6,28 +6,60 @@ import { registerIdentityCommands } from './commands/identity.js';
 import { registerPayCommands } from './commands/pay.js';
 import { registerDepositCommands } from './commands/deposit.js';
 
-const LOGO =
-  '\n' +
-  chalk.bold.cyan('  _   _ _   _ _____     _______ ____  ____  _____') + '\n' +
-  chalk.bold.cyan(' | | | | \\ | |_ _\\ \\   / / ____|  _ \\/ ___|| ____|') + '\n' +
-  chalk.bold.cyan(' | | | |  \\| || | \\ \\ / /|  _| | |_) \\___ \\|  _|') + '\n' +
-  chalk.bold.cyan(' | |_| | |\\  || |  \\ V / | |___|  _ < ___) | |___') + '\n' +
-  chalk.bold.cyan('  \\___/|_| \\_|___|  \\_/  |_____|_| \\_\\____/|_____|') + '\n' +
-  '\n' +
-  chalk.bold.white('  ____    _    _   _ _  __') + '\n' +
-  chalk.bold.white(' | __ )  / \\  | \\ | | |/ /') + '\n' +
-  chalk.bold.white(' |  _ \\ / _ \\ |  \\| | \' /') + '\n' +
-  chalk.bold.white(' | |_) / ___ \\| |\\  | . \\') + '\n' +
-  chalk.bold.white(' |____/_/   \\_\\_| \\_|_|\\_\\') + '\n' +
-  '\n' +
-  '  ' + chalk.gray('On-chain bank for AI Agents') + '    ' + chalk.dim('v0.1.0') + '\n' +
-  '  ' + chalk.gray('Powered by') + ' ' + chalk.blueBright('Base') + ' ' + chalk.gray('|') + ' ' + chalk.green('ERC-8004') + ' ' + chalk.gray('|') + ' ' + chalk.yellow('x402') + ' ' + chalk.gray('|') + ' ' + chalk.magenta('Aave V3') + '\n';
+// ANSI Shadow font - UNIVERSE BANK on one line
+const LINES = [
+  '██╗   ██╗███╗   ██╗██╗██╗   ██╗███████╗██████╗ ███████╗███████╗  ██████╗  █████╗ ███╗   ██╗██╗  ██╗',
+  '██║   ██║████╗  ██║██║██║   ██║██╔════╝██╔══██╗██╔════╝██╔════╝  ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝',
+  '██║   ██║██╔██╗ ██║██║██║   ██║█████╗  ██████╔╝███████╗█████╗    ██████╔╝███████║██╔██╗ ██║█████╔╝ ',
+  '██║   ██║██║╚██╗██║██║╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║██╔══╝    ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ',
+  '╚██████╔╝██║ ╚████║██║ ╚████╔╝ ███████╗██║  ██║███████║███████╗  ██████╔╝██║  ██║██║ ╚████║██║  ██╗',
+  ' ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝',
+];
+
+const GRADIENT = [
+  '#00d4ff', // cyan
+  '#00aaff', // sky blue
+  '#3388ff', // blue
+  '#5566ff', // indigo
+  '#7744ff', // purple
+  '#9933ff', // violet
+  '#bb33ee', // magenta
+  '#dd44cc', // pink
+];
+
+function applyGradient(line: string): string {
+  const segLen = Math.ceil(line.length / GRADIENT.length);
+  let out = '';
+  for (let i = 0; i < GRADIENT.length; i++) {
+    const start = i * segLen;
+    const end = Math.min(start + segLen, line.length);
+    if (start >= line.length) break;
+    out += chalk.hex(GRADIENT[i])(line.slice(start, end));
+  }
+  return out;
+}
 
 function showBanner() {
   const args = process.argv.slice(2);
   const isHelp = args.length === 0 || args.includes('--help') || args.includes('-h');
   if (isHelp) {
-    console.log(LOGO);
+    console.log();
+    for (const line of LINES) {
+      console.log(applyGradient(line));
+    }
+    console.log();
+    console.log(
+      '  ' + chalk.gray('On-chain bank for AI Agents') +
+      '    ' + chalk.dim('v0.1.0'),
+    );
+    console.log(
+      '  ' + chalk.gray('Powered by') + ' ' +
+      chalk.hex('#0052FF')('Base') + ' ' + chalk.gray('|') + ' ' +
+      chalk.hex('#00d4ff')('ERC-8004') + ' ' + chalk.gray('|') + ' ' +
+      chalk.hex('#FFD700')('x402') + ' ' + chalk.gray('|') + ' ' +
+      chalk.hex('#B6509E')('Aave V3'),
+    );
+    console.log();
   }
 }
 
