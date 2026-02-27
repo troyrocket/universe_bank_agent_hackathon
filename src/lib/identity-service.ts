@@ -36,6 +36,18 @@ export async function registerIdentity(
   const base64Data = Buffer.from(JSON.stringify(registrationJson)).toString('base64');
   const dataUri = `data:application/json;base64,${base64Data}`;
 
+  // Pre-check ETH balance for gas
+  const balance = await provider.getBalance(signer.address);
+  if (balance === 0n) {
+    const faucetUrl = network.chain.id === 84532
+      ? 'https://www.alchemy.com/faucets/base-sepolia'
+      : '';
+    throw new Error(
+      `No ETH for gas. Address: ${signer.address}` +
+      (faucetUrl ? `\n  Get testnet ETH: ${faucetUrl}` : ''),
+    );
+  }
+
   const contract = new ethers.Contract(network.identityRegistry, IDENTITY_REGISTRY_ABI, signer);
   const tx = await contract.register(dataUri);
   const receipt = await tx.wait();
