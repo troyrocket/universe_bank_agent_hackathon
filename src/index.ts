@@ -20,14 +20,14 @@ const LINES = [
 ];
 
 const GRADIENT = [
-  '#00d4ff', // cyan
-  '#00aaff', // sky blue
-  '#3388ff', // blue
-  '#5566ff', // indigo
-  '#7744ff', // purple
-  '#9933ff', // violet
-  '#bb33ee', // magenta
-  '#dd44cc', // pink
+  '#FFD6EB', // lightest pink
+  '#FFC2E0', // light pink
+  '#FFADD6', // soft pink
+  '#FF99CC', // pink
+  '#FF85C2', // medium pink
+  '#FF70B8', // bright pink
+  '#FF5CAD', // hot pink
+  '#FF47A3', // Klarna pink
 ];
 
 function applyGradient(line: string): string {
@@ -43,27 +43,23 @@ function applyGradient(line: string): string {
 }
 
 function showBanner() {
-  const args = process.argv.slice(2);
-  const isHelp = args.length === 0 || args.includes('--help') || args.includes('-h');
-  if (isHelp) {
-    console.log();
-    for (const line of LINES) {
-      console.log(applyGradient(line));
-    }
-    console.log();
-    console.log(
-      '  ' + chalk.gray('On-chain bank for AI Agents') +
-      '    ' + chalk.dim('v0.1.0'),
-    );
-    console.log(
-      '  ' + chalk.gray('Powered by') + ' ' +
-      chalk.hex('#0052FF')('Base') + ' ' + chalk.gray('|') + ' ' +
-      chalk.hex('#00d4ff')('ERC-8004') + ' ' + chalk.gray('|') + ' ' +
-      chalk.hex('#FFD700')('x402') + ' ' + chalk.gray('|') + ' ' +
-      chalk.hex('#B6509E')('Aave V3'),
-    );
-    console.log();
+  console.log();
+  for (const line of LINES) {
+    console.log(applyGradient(line));
   }
+  console.log();
+  console.log(
+    '  ' + chalk.hex('#FF85C2')('On-chain "JP Morgan" CLI interface for AI Agents') +
+    '    ' + chalk.dim('v0.1.0'),
+  );
+  console.log(
+    '  ' + chalk.white('Powered by') + ' ' +
+    chalk.hex('#0052FF')('Base') + ' ' + chalk.gray('|') + ' ' +
+    chalk.hex('#00d4ff')('ERC-8004') + ' ' + chalk.gray('|') + ' ' +
+    chalk.hex('#FFD700')('x402') + ' ' + chalk.gray('|') + ' ' +
+    chalk.hex('#B6509E')('Aave V3'),
+  );
+  console.log();
 }
 
 showBanner();
